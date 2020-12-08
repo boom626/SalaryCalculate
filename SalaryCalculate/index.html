@@ -1,0 +1,110 @@
+<head>
+    <title>SalaryCalculate</title>
+    <meta charset="utf8">
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        h1 {
+            font-family: cursive;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-style: solid;
+            width: 100%;
+            background-color: #957DAD;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        input[type=submit] {
+            width: 5%;
+            /* padding: 12px 20px; */
+            margin: 5px 0;
+            box-sizing: border-box;
+            background-color: rgb(28, 158, 110);
+            color: white;
+        }   table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        form{
+            margin-left: 45%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Salary Calculate</h1>
+
+    <p>เพิ่มข้อมูล</p>
+    <form action="insert.php">
+        รหัสพนักงาน : <input type="text" name="empid" maxlength="6" size="4"><br>
+        รหัสบัตรประชาชน : <input type="text" name="naId" maxlength="13" size="11"><br>
+        ชื่อ : <input type="text" name="empname"><br>
+        นามสกุล : <input type="text" name="emplname"><br>
+        ตำแหน่ง : <select name="position">
+            <option value="">--เลือก--</option>
+            <option value="delivery_man">พนักงานขับรถขนส่ง</option>
+            <option value="cashier">พนักงานเก็บเงิน</option>
+            <option value="brach_manager">ผู้จัดการสาขา</option>
+            <option value="parcel_carrier">พนักงานขายวัสดุห่อหุ้ม</option>
+            <option value="porter">พนักงานขนพัสดุ</option>
+        </select><br>
+        เงินเดือนบุคคล : <input type="number" name="salary"><br>
+        โบนัส : <select name="bonus">
+            <option value="">--เลือก--</option>
+            <option value="Overtime 3 hr">Overtime 3 hr</option>
+            <option value="Overtime 6 hr">Overtime 6 hr</option>
+            <option value="Overtime 9 hr">Overtime 9 hr</option>
+        </select><br>
+        <input type="submit" value="ยืนยัน">
+    </form>
+    <hr>
+
+    <p>แก้ไขข้อมูล</p>
+   <form action="update.php">
+        <input type="text" name="empid" placeholder="กรุณากรอกรหัสพนักงาน" maxlength="6"><br>
+        <select name="bonus">
+            <option value="">--เลือก--</option>
+            <option value="Overtime 3 hr">Overtime 3 hr</option>
+            <option value="Overtime 6 hr">Overtime 6 hr</option>
+            <option value="Overtime 9 hr">Overtime 9 hr</option>
+        </select><br>
+        <input type="submit" value="ยืนยัน">
+    </form>
+    <hr>
+
+    <p>ลบพนักงาน</p>
+    <form action="delete.php">
+        <input type="text" name="empid" placeholder="กรุณากรอกรหัสพนักงาน" maxlength="6">
+        <input type="submit" value="ยืนยัน">
+    </form>
+    <hr>
+
+    <p>แสดงข้อมูลตามรหัสพนักงาน</p>
+    <form action="selectID.php">
+        <input type="text" name="empid" placeholder="กรุณากรอกรหัสพนักงาน" maxlength="6">
+        <input type="submit" value="ยืนยัน">
+    </form>
+    <hr>
+
+    <p>แสดงข้อมูลตามตำแหน่งงาน</p>
+    <form action="selectposition.php">
+        <select name="position">
+            <option value="">--เลือก--</option>
+            <option value="delivery_man">พนักงานขับรถขนส่ง</option>
+            <option value="cashier">พนักงานเก็บเงิน</option>
+            <option value="brach_manager">ผู้จัดการสาขา</option>
+            <option value="parcel_carrier">พนักงานขายวัสดุห่อหุ้ม</option>
+            <option value="porter">พนักงานขนพัสดุ</option>
+        </select>
+        <input type="submit" value="ยืนยัน">
+    </form>
+    <hr>
+</body>
